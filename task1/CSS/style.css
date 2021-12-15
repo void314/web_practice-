@@ -1,0 +1,203 @@
+:root{
+    --main-radius: 5px;
+    --main-padding: 5px;
+    --clr-primary: #1c1c1c;
+    --clr-gray: #37474f;
+    --clr-gray-light: #b0bec5;
+}
+
+*{
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.news{
+    overflow: hidden;
+    box-shadow: 0px 2px 8px 0px var(--clr-gray-light);
+    background-color: white;
+    text-align: center;
+    border-radius: var(--main-radius);
+    position: relative;
+    min-height: 180px;
+}
+
+.banner-img{
+    position: absolute;
+    background-image: url(https://image.freepik.com/free-vector/abstract-banner-background-with-red-shapes_1361-3348.jpg);
+    height: 10rem;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.profile-img{
+    width: 10rem;
+    clip-path: circle(60px at center);
+    margin-top: 4.5rem;
+}
+
+.name{
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.description{
+    margin: 1rem 2rem;
+    font-size: 0.9rem;
+}
+
+.btn{
+    width: 100%;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    padding: 1rem;
+    background-color: var(--clr-primary);
+}
+
+.container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 0.2fr 1.5fr 3.5fr 0.8fr;
+    grid-template-areas: 
+    "header header header header"
+    "sidebar main main main"
+    "sidebar news news news"
+    "sidebar footer footer footer";
+    grid-gap: 0.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #004d40;
+    text-align: center;
+}
+
+header{
+    background: #c7c7c7;
+    grid-area: header;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+.nav{
+    display: grid;
+    grid-template-areas: 
+    "header header header header";
+}
+
+.nav_item{
+    list-style-type: none;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+.nav_link{
+    text-decoration: none;
+    color: black;
+    font-size: 8px;
+}
+
+.logo{
+    width: 25px;
+}
+
+main {
+    background: #c7c7c7;
+    grid-area: main;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+.sidebar{
+    background: #c7c7c7;
+    grid-area: sidebar;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    min-width: 70px;
+}
+
+.pizza{
+    max-width: 100%;
+}
+
+.container1{
+    background: #c7c7c7;
+    grid-area: container1;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+.container2{
+    background: #c7c7c7;
+    grid-area: container2;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+.container3{
+    background: #c7c7c7;
+    grid-area: container3;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+footer{
+    background: #c7c7c7;
+    grid-area: footer;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+@media only screen and (max-width: 550px){
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.4fr 0.4fr 1.2fr 1.2fr 1.2fr 1.2fr 1fr;
+        grid-template-areas: 
+        "header"
+        "sidebar"
+        "main"
+        "sidebar"
+        "news"
+        "news"
+        "news"
+        "footer";
+    }
+
+    .nav{
+        grid-template-areas: 
+        "header"
+        "header"
+        "header"
+        "header";
+    }
+
+    p{
+        font-size: 5px;
+    }
+
+    span{
+        font-size: 10px;
+    }
+
+    .profile-img{
+        display: none;
+    }
+
+    .banner-img{
+        height: 5rem;
+    }
+
+    .description{
+        margin: 0.7rem 1rem;
+        font-size: 0.5rem;
+    }
+    
+    .btn{
+        font-size: 0.8rem;
+        padding: 0.8rem;
+    }
+}

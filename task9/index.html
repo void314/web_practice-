@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Табы</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapper">
+    <div id="tabs">
+        <ul id="items">
+            <li class="active"><a href="#tabs-1">Таб 1</a></li>
+            <li><a href="#tabs-2">Таб 2</a></li>
+            <li><a href="#tabs-3">Таб 3</a></li>
+        </ul>
+    </div>
+    <div class="tab-content">
+        <div id="tabs-1" class="tabs-text">
+            <p>Вкладка 1</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, officiis ut hic voluptate inventore natus molestiae! Ut, voluptate maxime facere officia animi id quod perspiciatis nam officiis et. Nisi, nesciunt!</p>
+        </div>
+        <div id="tabs-2" class="tabs-text">
+            <p>Вкладка 2</p>
+            <p>Nesciunt, officiis ut hic voluptate inventore natus molestiae! Ut, voluptate maxime facere officia animi id quod perspiciatis nam officiis et. Nisi, nesciunt!</p>
+        </div>
+        <div id="tabs-3" class="tabs-text">
+            <p>Вкладка 3</p>
+            <p>Ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, officiis ut hic voluptate inventore natus molestiae! Ut, voluptate maxime facere officia animi id quod perspiciatis nam officiis et. Nisi, nesciunt!</p>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(function() {
+        $('#tabs-1').show();
+        $('#items li').click(function() {
+            if( $(this).attr('class') == 'active'){
+                return false;
+            }
+
+            var link = $(this).children().attr('href');
+            var prevActive = $('li.active').children().attr('href');
+
+            console.log(link);
+            console.log(prevActive);
+            
+            $('li.active').removeClass('active');
+            $(this).addClass('active');          
+
+            $(prevActive).fadeOut(500, function() {
+                $(link).fadeIn();
+            });
+        });
+    })
+</script>
+</body>
+</html>
